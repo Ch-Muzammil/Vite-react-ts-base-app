@@ -1,10 +1,10 @@
-import React from "react";
-import ErrorBoundary from "@src/app/providers/ErrorBoundary";
-import ScrollToTop from "@src/shared/components/ScrollToTop";
+import type { FC } from "react";
+import ErrorBoundary from "@/app/providers/ErrorBoundary";
+import ScrollToTop from "@/shared/components/ScrollToTop";
 import { Toaster } from "sonner";
-import { AppRouter } from "./app/router";
+import { AppRouter } from "@/app/router";
 
-const App: React.FC = () => {
+const App: FC = () => {
   return (
     <ErrorBoundary>
       <ScrollToTop>

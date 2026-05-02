@@ -1,11 +1,11 @@
-import React, { useRef, useState } from "react";
+import { useRef, useState, type FC, type ChangeEvent } from "react";
 
-import { cn } from "@src/utils";
+import { cn } from "@/utils";
 import type { ProfileUploaderProps } from "./profileuploader.types";
 import Loader from "../loaders/Loader";
 import { variantStyles } from "./profileuploader.variants";
 
-const ProfileUploader: React.FC<ProfileUploaderProps> = ({
+const ProfileUploader: FC<ProfileUploaderProps> = ({
   label,
   labelClass,
   wrapperClass,
@@ -22,7 +22,7 @@ const ProfileUploader: React.FC<ProfileUploaderProps> = ({
   const fileRef = useRef<HTMLInputElement | null>(null);
   const [file, setFile] = useState<File | null>(null);
 
-  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleFileChange = (e: ChangeEvent<HTMLInputElement>) => {
     const selected = e.target.files?.[0] || null;
     setFile(selected);
     onChange?.(selected);

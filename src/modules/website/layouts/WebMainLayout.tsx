@@ -1,8 +1,8 @@
-import React from "react";
+import type { FC } from "react";
 import { Outlet } from "react-router-dom";
 import type { WebMainLayoutProps } from "../typescript/interfaces";
 
-const WebMainLayout: React.FC<WebMainLayoutProps> = () => {
+const WebMainLayout: FC<WebMainLayoutProps> = () => {
   return (
     <div>
       <header>

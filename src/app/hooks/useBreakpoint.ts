@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { BREAKPOINTS } from "@src/app/config/Constants";
+import { BREAKPOINTS } from "@/app/config/Constants";
 
 type Breakpoint = "mobile" | "tablet" | "desktop" | "largeDesktop";
 

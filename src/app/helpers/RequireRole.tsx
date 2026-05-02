@@ -1,8 +1,8 @@
-import React from "react";
+import type { FC } from "react";
 import { Navigate } from "react-router-dom";
-import type { RequireRoleProps } from "@src/global/interfaces";
+import type { RequireRoleProps } from "@/global/interfaces";
 
-const RequireRole: React.FC<RequireRoleProps> = ({
+const RequireRole: FC<RequireRoleProps> = ({
   allowedRoles,
   userRole,
   children,

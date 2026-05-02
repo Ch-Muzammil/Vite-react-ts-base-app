@@ -1,6 +1,6 @@
-import React from 'react'
+import type { FC } from "react";
 
-const MainLayout:React.FC = () => {
+const MainLayout: FC = () => {
   return (
     <div>
       

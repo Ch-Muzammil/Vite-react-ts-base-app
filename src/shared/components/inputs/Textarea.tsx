@@ -1,9 +1,9 @@
-import React from "react";
-import { cn } from "@src/utils/index";
+import type { FC } from "react";
+import { cn } from "@/utils";
 import type { TextareaProps } from "./input.types";
 import { textareaVariantStyles } from "./input.variants";
 
-const Textarea: React.FC<TextareaProps> = ({
+const Textarea: FC<TextareaProps> = ({
   label,
   variant = "default",
   error,

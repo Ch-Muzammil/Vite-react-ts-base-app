@@ -1,4 +1,4 @@
-import React from "react";
+import type { FC } from "react";
 import CircularProgress from "@mui/material/CircularProgress";
 import LinearProgress from "@mui/material/LinearProgress";
 import Skeleton from "@mui/material/Skeleton";
@@ -16,7 +16,7 @@ interface LoaderProps {
   value?: number;
 }
 
-const Loader: React.FC<LoaderProps> = ({
+const Loader: FC<LoaderProps> = ({
   type = "spinner",
   size = 24,
   thickness = 4,

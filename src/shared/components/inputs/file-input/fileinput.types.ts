@@ -1,5 +1,3 @@
-import React from "react";
-
 export interface FileInputProps {
   label?: string;
   labelClass?: string;
