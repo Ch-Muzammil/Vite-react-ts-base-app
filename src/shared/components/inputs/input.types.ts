@@ -1,5 +1,8 @@
-import React from "react";
-import type { InputHTMLAttributes } from "react";
+import type {
+  ElementType,
+  InputHTMLAttributes,
+  TextareaHTMLAttributes,
+} from "react";
 
 export type InputVariant =
   | "default"
@@ -8,8 +11,7 @@ export type InputVariant =
   | "success"
   | "warning";
 
-export interface InputProps
-  extends React.InputHTMLAttributes<HTMLInputElement> {
+export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   label?: string;
   variant?: InputVariant;
   error?: string;
@@ -27,7 +29,7 @@ export type TextareaVariant =
   | "warning";
 
 export interface TextareaProps
-  extends React.TextareaHTMLAttributes<HTMLTextAreaElement> {
+  extends TextareaHTMLAttributes<HTMLTextAreaElement> {
   label?: string;
   variant?: TextareaVariant;
   error?: string | string[];
@@ -40,12 +42,12 @@ export interface TextareaProps
 export interface SearchInputProps
   extends Omit<InputHTMLAttributes<HTMLInputElement>, "type"> {
   label?: string;
-  variant?: "default" | "secondary" ;
+  variant?: "default" | "secondary";
   error?: string;
   className?: string;
   labelClass?: string;
   wrapperClass?: string;
   placeholder?: string;
   iconPosition?: "left" | "right";
-  icon?: React.ElementType;
+  icon?: ElementType;
 }

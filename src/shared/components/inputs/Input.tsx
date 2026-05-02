@@ -1,10 +1,10 @@
-import React, { useState } from "react";
-import { cn } from "@src/utils/index";
+import { useState, type FC } from "react";
+import { cn } from "@/utils";
 import type { InputProps } from "./input.types";
 import { inputVariantStyles } from "./input.variants";
 import { Eye, EyeOff } from "lucide-react";
 
-const Input: React.FC<InputProps> = ({
+const Input: FC<InputProps> = ({
   type = "text",
   label,
   variant = "default",

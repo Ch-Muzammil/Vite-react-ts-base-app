@@ -1,10 +1,10 @@
-import React from "react";
+import type { FC } from "react";
 import type { ButtonProps } from "./button.types";
 import { variantStyles } from "./button.variants";
-import { cn } from "@src/utils/index";
+import { cn } from "@/utils";
 import Loader from "../loaders/Loader";
 
-const Button: React.FC<ButtonProps> = ({
+const Button: FC<ButtonProps> = ({
   title,
   children,
   variant = "primary",

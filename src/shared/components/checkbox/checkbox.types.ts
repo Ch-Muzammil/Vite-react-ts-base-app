@@ -1,13 +1,14 @@
-import React from "react";
+import type { ChangeEvent, InputHTMLAttributes } from "react";
 
-export interface CheckboxProps extends React.InputHTMLAttributes<HTMLInputElement> {
+export interface CheckboxProps
+  extends InputHTMLAttributes<HTMLInputElement> {
   label?: string;
   labelClass?: string;
   variant?: "primary" | "secondary" | "danger";
   checked?: boolean;
   disabled?: boolean;
   isLoading?: boolean;
-  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  onChange?: (e: ChangeEvent<HTMLInputElement>) => void;
   name?: string;
   id?: string;
   value?: string | number;

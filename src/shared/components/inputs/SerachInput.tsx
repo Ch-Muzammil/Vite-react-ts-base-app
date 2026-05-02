@@ -1,10 +1,10 @@
-import React from "react";
-import { cn } from "@src/utils/index";
+import type { FC } from "react";
+import { cn } from "@/utils";
 import type { SearchInputProps } from "./input.types";
 import { inputVariantStyles } from "./input.variants";
 import { Search } from "lucide-react";
 
-const SearchInput: React.FC<SearchInputProps> = ({
+const SearchInput: FC<SearchInputProps> = ({
   label,
   variant = "default",
   error,

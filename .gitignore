@@ -9,6 +9,7 @@ lerna-debug.log*
 
 node_modules
 dist
+*.tsbuildinfo
 dist-ssr
 *.local
 
@@ -29,3 +30,4 @@ dist-ssr
 .env*
 .env.production
 .env.development
+config.bat

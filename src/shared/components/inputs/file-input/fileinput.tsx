@@ -1,11 +1,11 @@
-import React, { useRef, useState } from "react";
+import { useRef, useState, type ChangeEvent, type FC } from "react";
 
 import type { FileInputProps } from "./fileinput.types";
-import { cn } from "@src/utils";
+import { cn } from "@/utils";
 import { variantStyles } from "./fileinput.variants";
 import Loader from "../../loaders/Loader";
 
-const FileInput: React.FC<FileInputProps> = ({
+const FileInput: FC<FileInputProps> = ({
   label,
   labelClass,
   wrapperClass,
@@ -22,10 +22,10 @@ const FileInput: React.FC<FileInputProps> = ({
   const fileRef = useRef<HTMLInputElement | null>(null);
   const [files, setFiles] = useState<File[]>([]);
 
-  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleFileChange = (e: ChangeEvent<HTMLInputElement>) => {
     const selectedFiles = e.target.files ? Array.from(e.target.files) : [];
 
-    let updatedFiles = multiple ? [...files, ...selectedFiles] : selectedFiles;
+    const updatedFiles = multiple ? [...files, ...selectedFiles] : selectedFiles;
 
     setFiles(updatedFiles);
     onChange?.(updatedFiles);

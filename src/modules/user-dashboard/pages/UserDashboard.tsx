@@ -1,6 +1,6 @@
-import React from 'react'
+import type { FC } from "react";
 
-const UserDashboard:React.FC = () => {
+const UserDashboard: FC = () => {
   return (
     <div>
       

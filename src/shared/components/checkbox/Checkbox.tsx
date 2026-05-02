@@ -1,11 +1,11 @@
-import React from "react";
+import type { FC } from "react";
 import type { CheckboxProps } from "./checkbox.types";
-import { cn } from "@src/utils";
+import { cn } from "@/utils";
 import { variantStyles } from "./checkbox.variants";
 import Loader from "../loaders/Loader";
 
 
-const Checkbox: React.FC<CheckboxProps> = ({
+const Checkbox: FC<CheckboxProps> = ({
   label,
   labelClass,
   variant = "primary",

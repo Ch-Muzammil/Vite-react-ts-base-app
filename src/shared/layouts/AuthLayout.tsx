@@ -1,6 +1,6 @@
-import React from 'react'
+import type { FC } from "react";
 
-const AuthLayout:React.FC = () => {
+const AuthLayout: FC = () => {
   return (
     <div>
       

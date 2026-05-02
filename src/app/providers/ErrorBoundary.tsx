@@ -1,8 +1,8 @@
-import React, { Component } from "react";
+import { Component, type ErrorInfo } from "react";
 import type {
   ErrorBoundaryProps,
   ErrorBoundaryState,
-} from "@src/global/interfaces";
+} from "@/global/interfaces";
 
 export default class ErrorBoundary extends Component<
   ErrorBoundaryProps,
@@ -17,7 +17,7 @@ export default class ErrorBoundary extends Component<
     return { hasError: true, error };
   }
 
-  componentDidCatch(error: Error, errorInfo: React.ErrorInfo) {
+  componentDidCatch(error: Error, errorInfo: ErrorInfo) {
     console.error("ErrorBoundary caught an error:", error, errorInfo);
   }
 

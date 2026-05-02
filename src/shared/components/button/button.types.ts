@@ -1,3 +1,5 @@
+import type { ButtonHTMLAttributes, ReactNode } from "react";
+
 export type ButtonVariant =
   | "primary"
   | "secondary"
@@ -8,10 +10,8 @@ export type ButtonVariant =
   | "warning"
   | "info";
 
-import React from "react";
-
 export type ButtonProps = {
-  title?: string | React.ReactNode;
+  title?: string | ReactNode;
   variant?: ButtonVariant;
   isLoading?: boolean;
   link?: string;
@@ -23,4 +23,4 @@ export type ButtonProps = {
   imgLeft?: boolean;
   imgRight?: boolean;
   btnClass?: string;
-} & React.ButtonHTMLAttributes<HTMLButtonElement>;
+} & ButtonHTMLAttributes<HTMLButtonElement>;
