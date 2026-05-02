@@ -6,9 +6,11 @@ const AboutUs = lazy(() => import("@/modules/website/pages/AboutUs"));
 const UiShowcasePage = lazy(
   () => import("@/modules/website/pages/UiShowcasePage")
 );
+const LoginPage = lazy(() => import("@/modules/website/pages/LoginPage"));
 
 export const webPublicRoutes = [
   { index: true, element: <HomePage /> },
   { path: "/about-us", element: <AboutUs /> },
   { path: "/ui-showcase", element: <UiShowcasePage /> },
+  { path: "/login", element: <LoginPage /> },
 ];

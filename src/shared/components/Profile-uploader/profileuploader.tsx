@@ -1,4 +1,11 @@
-import { useRef, useState, type FC, type ChangeEvent } from "react";
+import {
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+  type FC,
+  type ChangeEvent,
+} from "react";
 
 import { cn } from "@/utils";
 import type { ProfileUploaderProps } from "./profileuploader.types";
@@ -22,8 +29,21 @@ const ProfileUploader: FC<ProfileUploaderProps> = ({
   const fileRef = useRef<HTMLInputElement | null>(null);
   const [file, setFile] = useState<File | null>(null);
 
+  const objectUrl = useMemo(
+    () => (file ? URL.createObjectURL(file) : null),
+    [file]
+  );
+
+  useEffect(() => {
+    return () => {
+      if (objectUrl) URL.revokeObjectURL(objectUrl);
+    };
+  }, [objectUrl]);
+
+  const previewUrl = objectUrl ?? defaultImage ?? null;
+
   const handleFileChange = (e: ChangeEvent<HTMLInputElement>) => {
-    const selected = e.target.files?.[0] || null;
+    const selected = e.target.files?.[0] ?? null;
     setFile(selected);
     onChange?.(selected);
   };
@@ -33,8 +53,6 @@ const ProfileUploader: FC<ProfileUploaderProps> = ({
     onRemove?.();
     if (fileRef.current) fileRef.current.value = "";
   };
-
-  const previewUrl = file ? URL.createObjectURL(file) : defaultImage || null;
 
   return (
     <div className={cn("flex flex-col gap-2", wrapperClass)}>

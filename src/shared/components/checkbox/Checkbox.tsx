@@ -57,7 +57,7 @@ const Checkbox: FC<CheckboxProps> = ({
 
   return (
     <label
-      htmlFor={id || name}
+      htmlFor={id ?? name}
       className={cn(
         "inline-flex items-center gap-2 cursor-pointer",
         wrapperClass
@@ -66,11 +66,11 @@ const Checkbox: FC<CheckboxProps> = ({
       {labelLeft && label && <span className={labelClass}>{label}</span>}
       <input
         type="checkbox"
-        id={id || name}
+        id={id ?? name}
         name={name}
         value={value}
         checked={checked}
-        disabled={disabled || isLoading}
+        disabled={Boolean(disabled) || isLoading}
         onChange={onChange}
         className="hidden"
         {...props}
