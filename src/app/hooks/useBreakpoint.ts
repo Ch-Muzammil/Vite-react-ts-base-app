@@ -3,7 +3,7 @@ import { BREAKPOINTS } from "@/app/config/Constants";
 
 type Breakpoint = "mobile" | "tablet" | "desktop" | "largeDesktop";
 
-export const useBreakpoint = (delay: number = 200) => {
+export const useBreakpoint = (delay = 200) => {
   const [width, setWidth] = useState<number>(() =>
     typeof window !== "undefined" ? window.innerWidth : 0
   );
@@ -19,8 +19,6 @@ export const useBreakpoint = (delay: number = 200) => {
         setWidth(window.innerWidth);
       }, delay);
     };
-
-    setWidth(window.innerWidth);
 
     window.addEventListener("resize", handleResize);
     return () => {

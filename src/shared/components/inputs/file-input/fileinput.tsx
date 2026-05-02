@@ -69,7 +69,7 @@ const FileInput: FC<FileInputProps> = ({
         <div className="flex gap-2 flex-wrap mt-2">
           {files.map((file, index) => (
             <div
-              key={index}
+              key={`${file.name}-${file.lastModified}-${file.size}`}
               className={cn(
                 "relative border rounded-md overflow-hidden w-20 h-20 flex items-center justify-center",
                 previewClass

@@ -1,10 +1,13 @@
 import type { FC } from "react";
 import ErrorBoundary from "@/app/providers/ErrorBoundary";
+import { useAuthLogout } from "@/hooks/useAuthLogout";
 import ScrollToTop from "@/shared/components/ScrollToTop";
 import { Toaster } from "sonner";
 import { AppRouter } from "@/app/router";
 
 const App: FC = () => {
+  useAuthLogout();
+
   return (
     <ErrorBoundary>
       <ScrollToTop>

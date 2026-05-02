@@ -37,7 +37,7 @@ export default class ErrorBoundary extends Component<
             ⚠️ Oops! Something went wrong
           </h2>
           <p className="text-gray-600 mb-5">
-            {this.state.error?.message || "An unexpected error occurred."}
+            {this.state.error?.message ?? "An unexpected error occurred."}
           </p>
           <button
             onClick={this.handleReset}

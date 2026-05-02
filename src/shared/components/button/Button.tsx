@@ -29,7 +29,7 @@ const Button: FC<ButtonProps> = ({
     showImg && imgSrc ? (
       <img
         src={imgSrc}
-        alt={imgAlt || "button icon"}
+        alt={imgAlt ?? "button icon"}
         className={cn("w-4 h-4", imgClass)}
       />
     ) : null;
@@ -60,7 +60,7 @@ const Button: FC<ButtonProps> = ({
   return (
     <button
       {...props}
-      disabled={disabled || isLoading}
+      disabled={Boolean(disabled) || isLoading}
       className={cn(baseStyles, variantStyles[variant], btnClass, className)}
     >
       {content}
